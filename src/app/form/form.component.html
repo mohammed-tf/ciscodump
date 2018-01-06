@@ -1,0 +1,93 @@
+
+    <fieldset>
+		<p> {{count}}</p>
+		<div class="item">
+		<select  [(ngModel)]="topic" class="form-control" name="topic">
+			<option *ngFor="let topic of topics" [ngValue]="topic">{{topic}}</option>
+		  </select></div>
+    	<div class="item">
+        <textarea type="text" class="form-control" [(ngModel)]="question" [value]="qValue"></textarea>       
+		</div>
+		
+		
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answA" type="text"  name="answA"  placeholder="A" [value]="aValue" /></p>
+			    <input class="form-control" [(ngModel)]="a"  type="checkbox"  id="a">
+		<div class="toggle"><label for="a"><i></i></label></div>
+		</div>
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answB" type="text"  name="answB"  placeholder="B" [value]="bValue" /></p>
+			    <input class="form-control" [(ngModel)]="b"  type="checkbox"  id="b">
+		<div class="toggle"><label for="b"><i></i></label></div>
+		</div>
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answC" type="text"  name="answC"  placeholder="C" [value]="cValue" /></p>
+			    <input class="form-control" [(ngModel)]="c"  type="checkbox"  id="c">
+		<div class="toggle"><label for="c"><i></i></label></div>
+		</div>
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answD" type="text"  name="answD"  placeholder="D" [value]="dValue" /></p>
+			    <input class="form-control" [(ngModel)]="d"  type="checkbox"  id="d">
+		<div class="toggle"><label for="d"><i></i></label></div>
+		</div>
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answE" type="text"  name="answE"  placeholder="E" [value]="eValue" /></p>
+			    <input class="form-control" [(ngModel)]="e"  type="checkbox"  id="e">
+		<div class="toggle"><label for="e"><i></i></label></div>
+		</div>
+
+		<div class="item">
+			<p> <input class="form-control" [(ngModel)]="answF" type="text"  name="answF"  placeholder="F" [value]="fValue" /></p>
+			    <input class="form-control" [(ngModel)]="f"  type="checkbox"  id="f">
+		<div class="toggle"><label for="f"><i></i></label></div>
+		</div>
+
+        <button (click)="addPost()">Add!</button>
+	</fieldset>
+
+
+<table>
+	<thead>
+	  <tr>
+	   <th>question</th>
+	  <th>A</th>
+	<th>B</th>
+	 <th>C</th>
+	   <th>D</th>
+		  <th>answers</th>
+
+
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr  *ngFor="let post of posts | async ;let i = index">
+			<td> {{ post.id}}</td>
+			<td> Topic : {{post.data.Topic}}</td>
+		<td> Qusetion : {{ post.data.Question}}</td>
+		<td> A : {{ post.data.Options[i]}}</td>
+		<td> B : {{ post.data.Options[i+1]}}</td>
+		<td> C : {{ post.data.Options[i+2]}}</td>
+		<td> D : {{ post.data.Options[i+3]}}</td>
+		<td> E : {{ post.data.Options[i+4]}}</td>
+		<td> F : {{ post.data.Options[i+5]}}</td>
+		<td> Answers : {{post.data.Answers}}</td>
+		<th><button (click)="delete(post.id)">Delete</button></th>
+
+	  </tr>
+  </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
