@@ -8,7 +8,6 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
@@ -16,11 +15,11 @@
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
     "deploy": "git push origin master && git push heroku master"
-
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
+    "@angular/cli": "1.6.3",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",
@@ -30,11 +29,10 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "angularfire2": "^5.0.0-rc.4",
-    "@angular/cli": "1.6.3",
     "bootstrap": "^4.0.0-beta.3",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
-    "firebase": "^4.8.1",
+    "firebase": "^4.8.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
