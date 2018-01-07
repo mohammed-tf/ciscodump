@@ -40,6 +40,8 @@ export class FormComponent implements OnInit {
   bValue;
   cValue;
   dValue;
+  eValue;
+  fValue;
 count:number;
 
 postsCol: AngularFirestoreCollection<Post>;
